@@ -7,23 +7,47 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #333333;
-            color: #f0f0f0;
             margin: 0;
             font-family: Arial, sans-serif;
+            color: #f0f0f0;
         }
 
-        /* Header styles */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7; /* Adjust the opacity for a subtle background effect */
+        }
+
         header {
             color: white;
             text-align: center;
             padding: 20px;
             position: relative;
-            width: 100vw;
-            box-sizing: border-box;
+            z-index: 1;
         }
 
-        /* Hamburger menu styling */
+        .content {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
         .hamburger {
             position: absolute;
             top: 10px;
@@ -35,6 +59,7 @@
             padding: 10px;
             border-radius: 5px;
             border: 2px solid #ffcc00;
+            z-index: 2;
         }
 
         nav ul {
@@ -63,48 +88,23 @@
         #menu.show {
             display: block;
         }
-
-        /* Content section styles */
-        #content-section {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        #content-section h2 {
-            color: #ffcc00; /* Gold color for headings */
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        #content-section p {
-            color: #e0e0e0; /* Light gray for body text */
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        footer {
-            background-color: #4d4d4d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            width: 100vw;
-            box-sizing: border-box;
-        }
     </style>
 </head>
 <body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="Picsart_24-10-29_00-06-53-890.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <header>
         <h1>Welcome to Martoo EduTech Zone</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul id="menu">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
@@ -112,9 +112,9 @@
         </nav>
     </header>
 
-    <section id="content-section">
-        <h2>Your gateway to education and technology</h2>
-        <p>Martoo EduTech Zone is a comprehensive platform dedicated to enhancing education through technology. Our mission is to empower users with tools, resources, and tech support that make learning accessible and engaging. Whether you're a student, educator, or tech enthusiast, Martoo EduTech Zone offers solutions that bridge the gap between traditional education and the digital world.</p>
+    <section class="content">
+        <h2>Innovative Educational Resources and Technology Solutions</h2>
+        <p>At Martoo EduTech Zone, we strive to enhance learning with the best resources and tools. Join us on this journey of technology-driven education!</p>
     </section>
 
     <footer>
