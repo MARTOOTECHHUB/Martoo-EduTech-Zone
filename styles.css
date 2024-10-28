@@ -1,0 +1,144 @@
+/* styles.css */
+
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Helps with sizing */
+}
+
+/* General styles */
+body {
+    background-color: #1a1a2e; /* Dark navy blue */
+    color: #f0f0f0; /* Light gray text */
+    font-family: 'Arial', sans-serif;
+    animation: backgroundAnimation 15s ease infinite; /* Animation for the background */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #1a1a2e; }
+    50% { background-color: #162447; } /* Slightly lighter dark blue */
+    100% { background-color: #1a1a2e; }
+}
+
+/* Sliding header animation */
+.sliding-header {
+    animation: slideIn 2s ease forwards; /* Sliding animation */
+    transform: translateX(-100%); /* Start off-screen to the left */
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0); /* Slide into view */
+    }
+}
+
+header {
+    background-color: #008080; /* Teal for header */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%; /* Ensure header fits the page width */
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav ul {
+    display: flex; /* Use flexbox for navigation */
+    justify-content: center; /* Center the items */
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #9370DB; /* Rebecca Purple */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Animation for link color change */
+}
+
+nav ul li a:hover {
+    color: #ffb600; /* Gold for hover effect */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Styles for hamburger menu */
+.hamburger {
+    display: none; /* Hide on larger screens */
+    cursor: pointer;
+    font-size: 24px;
+    color: #9370DB; /* Rebecca Purple */
+}
+
+.hidden {
+    display: none; /* Hide the menu by default */
+}
+
+main {
+    max-width: 1200px; /* Set a max width for the main content */
+    margin: 0 auto; /* Center the main content */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Section for key content */
+#content-section {
+    color: #333333;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#content-section h2,
+#content-section p {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Section for key features */
+#key-features {
+    margin: 40px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    color: #f0f0f0; /* Light text for better contrast */
+}
+
+footer {
+    background-color: #008080; /* Teal for footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Ensure footer fits the page width */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu on small screens */
+        flex-direction: column; /* Stack menu items */
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon on small screens */
+    }
+  }
