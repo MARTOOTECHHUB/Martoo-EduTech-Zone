@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Martoo EduTech Zone</title>
+    <title>Martoo EduTech Zone - Services</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
             background-color: #333333;
-            color: #e0e0e0;
+            color: #f0f0f0;
             margin: 0;
             font-family: Arial, sans-serif;
         }
 
         header {
-            background-color: #444444;
-            color: #ffcc00;
+            color: white;
             text-align: center;
             padding: 20px;
             position: relative;
@@ -63,113 +62,112 @@
             display: block;
         }
 
-        #services-section {
+        #service-section {
             text-align: center;
             padding: 60px 20px;
         }
 
-        #services-section h2 {
-            margin-bottom: 20px;
-            font-size: 1.2em;
-            color: #ffdd55;
-        }
-
-        .service {
+        #service-section h2 {
+            color: #ffcc00;
             background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             margin: 20px auto;
+            max-width: 800px;
+        }
+
+        #service-section p {
+            color: #e0e0e0;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        #vpn-generator {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
             max-width: 600px;
+            margin: 40px auto;
+            color: #f0f0f0;
             text-align: left;
         }
 
-        .service h3 {
-            color: #ffcc00;
+        #vpn-generator label {
+            display: block;
+            margin: 10px 0 5px;
         }
 
-        .service p, label, select, input {
-            color: #d1d1d1;
-        }
-
-        .dropdown {
-            display: none;
-            margin-top: 10px;
-        }
-
-        .dropdown-toggle {
-            cursor: pointer;
-            background-color: #ffcc00;
+        #vpn-generator input,
+        #vpn-generator select,
+        #vpn-generator button,
+        #output-field {
+            width: 100%;
             padding: 10px;
+            margin: 10px 0;
             border: none;
             border-radius: 5px;
-            text-align: left;
-            width: 100%;
-            color: #333;
         }
 
-        .dropdown-toggle:hover {
+        #vpn-generator button {
+            background-color: #ffcc00;
+            color: #333;
+            cursor: pointer;
+        }
+
+        #vpn-generator button:hover {
             background-color: #e6b800;
         }
 
-        footer {
-            background-color: #4d4d4d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100vw;
-            box-sizing: border-box;
+        #output-field {
+            background-color: #f9f9f9;
+            color: #333;
+            min-height: 50px;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Our Services</h1>
+        <h1>Martoo EduTech Zone - Services</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul id="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="services-section">
+    <section id="service-section">
         <h2>At Martoo EduTech Zone, we provide innovative educational resources and technology solutions to enhance your learning experience.</h2>
+        <p>Explore our VPN Configuration Generator to create custom VPN configurations tailored to your needs.</p>
+    </section>
 
-        <div class="service">
-            <h3>VPN Configuration Generator</h3>
-            <p>What's New: Explore our latest features for generating custom VPN configurations tailored to your needs!</p>
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" placeholder="Enter username" required>
-                <br><br>
-                <label for="sni">SNI/Bug Host:</label>
-                <input type="text" id="sni" placeholder="bug.hostname.com" required>
-                <br><br>
-                <label for="protocol">Protocol:</label>
-                <select id="protocol">
-                    <option value="vmess">VMess</option>
-                    <option value="trojan">Trojan</option>
-                    <option value="udp">UDP</option>
-                </select>
-                <br><br>
-                <button type="submit">Generate Config</button>
-            </form>
-        </div>
+    <section id="vpn-generator">
+        <h3>VPN Configuration Generator</h3>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required>
 
-        <div class="service">
-            <h3>Typing Assistant</h3>
-            <p>Our Typing Assistant helps you improve your typing speed and accuracy. Join our interactive typing courses designed for all skill levels.</p>
-        </div>
+        <label for="sni">SNI/Bug Host:</label>
+        <input type="text" id="sni" placeholder="bug.hostname.com" required>
 
-        <div class="service">
-            <h3>Materials</h3>
-            <p>Access essential study materials and resources to enhance your learning experience. Our materials are curated to suit various educational needs.</p>
-        </div>
+        <label for="protocol">Protocol:</label>
+        <select id="protocol" required>
+            <option value="VMess">VMess</option>
+            <option value="Trojan">Trojan</option>
+            <option value="UDP">UDP</option>
+        </select>
+
+        <button onclick="generateConfig()">Generate Config</button>
+
+        <label for="output-field">Generated Output:</label>
+        <div id="output-field" readonly></div>
     </section>
 
     <footer>
@@ -182,9 +180,13 @@
             menu.classList.toggle("show");
         }
 
-        function toggleDropdown(dropdownId) {
-            var dropdown = document.getElementById(dropdownId);
-            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        function generateConfig() {
+            var username = document.getElementById("username").value;
+            var sni = document.getElementById("sni").value;
+            var protocol = document.getElementById("protocol").value;
+            
+            var config = `Username: ${username}\nSNI/Bug Host: ${sni}\nProtocol: ${protocol}`;
+            document.getElementById("output-field").textContent = config;
         }
     </script>
 </body>
