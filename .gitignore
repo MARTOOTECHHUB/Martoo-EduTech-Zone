@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Dependency directories
+bower_components/
+
+# Log files
+*.log
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+
+# Other files you may want to ignore
+*.bak
+*.swp
+*.tmp
+*.zip
+*.tar.gz
+*.tgz
+*.tar
