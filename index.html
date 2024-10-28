@@ -17,25 +17,109 @@
             z-index: -1; /* Keeps the video behind all content */
         }
 
-        /* Preserve existing styles */
+        /* General body background and layout settings */
         body {
+            background-color: #333333; /* Dark earthy color */
+            color: #f0f0f0; /* Default text color */
             margin: 0;
             font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        header {
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100vw; /* Full page width */
+            box-sizing: border-box; /* Ensures padding doesn't add extra width */
+        }
+
+        /* Hamburger menu styling */
+        .hamburger {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: #ffcc00;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #ffcc00;
+        }
+
+        /* Navigation styles */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: none;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #ffcc00; /* Keep this as intended */
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 204, 0, 0.5);
+        }
+
+        /* Show the menu when toggled */
+        #menu.show {
+            display: block;
+        }
+
+        /* Section for key content */
+        #content-section {
+            color: #f0f0f0; /* Default text color */
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        #content-section h2,
+        #content-section p {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #4d4d4d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100vw; /* Full page width */
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
     <!-- Background video -->
-    <video class="background-video" autoplay loop playsinline>
+    <video class="background-video" autoplay loop muted playsinline>
         <source src="Picsart_24-10-29_00-06-53-890.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Header and navigation as they were -->
     <header>
         <h1>Welcome to Martoo EduTech Zone</h1>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
-            <ul>
+            <ul id="menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">About</a></li>
@@ -44,14 +128,20 @@
         </nav>
     </header>
 
-    <!-- Main content section remains the same -->
-    <div id="content-section">
+    <section id="content-section">
         <h2>Your gateway to education and technology</h2>
         <p>Martoo EduTech Zone provides educational resources and technology solutions for an enhanced learning experience.</p>
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Martoo EduTech Zone - All rights reserved.</p>
+    </footer>
 
     <script>
-        // Your existing JavaScript functionality here
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
     </script>
 </body>
-</html>
+    </html>
