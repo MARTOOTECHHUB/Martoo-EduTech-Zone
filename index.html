@@ -136,10 +136,10 @@
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul id="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#services" onclick="scrollToSection('services')">Services</a></li>
+                <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -150,11 +150,16 @@
     </section>
 
     <footer>
-        <p>Connect with us:</p>
         <div class="social-icons">
-            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank">YouTube</a>
-            <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank">Facebook</a>
-            <a href="https://wa.me/260950322498" target="_blank">WhatsApp</a>
+            <a href="https://youtube.com/@martootechhub?si=1E0BDIiWpOR1ziX_" target="_blank">
+                <img src="path/to/youtube-icon.png" alt="YouTube" width="24" height="24">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567209490054" target="_blank">
+                <img src="path/to/facebook-icon.png" alt="Facebook" width="24" height="24">
+            </a>
+            <a href="https://wa.me/260950322498" target="_blank">
+                <img src="path/to/whatsapp-icon.png" alt="WhatsApp" width="24" height="24">
+            </a>
         </div>
         <p>&copy; 2024 Martoo EduTech Zone - All rights reserved.</p>
     </footer>
@@ -163,6 +168,10 @@
         function toggleMenu() {
             var menu = document.getElementById("menu");
             menu.classList.toggle("show");
+        }
+
+        function scrollToSection(section) {
+            document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
