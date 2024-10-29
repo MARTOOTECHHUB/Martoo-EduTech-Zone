@@ -106,11 +106,27 @@
             width: 100vw; /* Full page width */
             box-sizing: border-box;
         }
+
+        /* Social icon styling */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
     </style>
 </head>
 <body>
     <!-- Background video -->
-    <video class="background-video" autoplay loop muted playsinline>
+    <video class="background-video" autoplay loop playsinline>
         <source src="Picsart_24-10-29_00-06-53-890.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -120,10 +136,10 @@
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul id="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -134,6 +150,12 @@
     </section>
 
     <footer>
+        <p>Connect with us:</p>
+        <div class="social-icons">
+            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank">Facebook</a>
+            <a href="https://wa.me/260950322498" target="_blank">WhatsApp</a>
+        </div>
         <p>&copy; 2024 Martoo EduTech Zone - All rights reserved.</p>
     </footer>
 
@@ -144,4 +166,4 @@
         }
     </script>
 </body>
-    </html>
+</html>
