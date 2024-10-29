@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martoo EduTech Zone - Services</title>
+    <title>Martoo EduTech Zone</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Video background styling */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Keeps video behind content */
+        }
+
+        /* Body styling with text color */
         body {
-            background-color: #333333;
+            background-color: #333333; /* Dark earthy color */
             color: #f0f0f0;
             margin: 0;
             font-family: Arial, sans-serif;
         }
 
+        /* Header and hamburger styles */
         header {
             color: white;
             text-align: center;
@@ -62,131 +75,90 @@
             display: block;
         }
 
-        #service-section {
+        /* Main content styling */
+        #content-section {
+            color: #333333;
             text-align: center;
             padding: 60px 20px;
         }
 
-        #service-section h2 {
-            color: #ffcc00;
-            background-color: rgba(255, 255, 255, 0.1);
+        #content-section h2,
+        #content-section p {
+            background-color: rgba(255, 255, 255, 0.7);
             padding: 20px;
             border-radius: 10px;
+            display: inline-block;
             margin: 20px auto;
             max-width: 800px;
         }
 
-        #service-section p {
-            color: #e0e0e0;
-            background-color: rgba(255, 255, 255, 0.1);
+        /* Footer styling */
+        footer {
+            text-align: center;
             padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        #vpn-generator {
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 40px auto;
-            color: #f0f0f0;
-            text-align: left;
-        }
-
-        #vpn-generator label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-
-        #vpn-generator input,
-        #vpn-generator select,
-        #vpn-generator button,
-        #output-field {
+            position: relative;
+            bottom: 0;
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
         }
 
-        #vpn-generator button {
-            background-color: #ffcc00;
-            color: #333;
-            cursor: pointer;
+        .social-icons {
+            margin-top: 10px;
         }
 
-        #vpn-generator button:hover {
-            background-color: #e6b800;
+        .social-icons a {
+            margin: 0 10px;
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 24px;
         }
 
-        #output-field {
-            background-color: #f9f9f9;
-            color: #333;
-            min-height: 50px;
-            white-space: pre-wrap;
-            overflow-wrap: break-word;
+        .social-icons a:hover {
+            color: white;
         }
     </style>
 </head>
 <body>
+    <!-- Background video -->
+    <video class="background-video" autoplay loop playsinline>
+        <source src="Picsart_24-10-29_00-06-53-890.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header and Hamburger menu -->
     <header>
-        <h1>Martoo EduTech Zone - Services</h1>
+        <h1>Welcome to Martoo EduTech Zone</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul id="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="service-section">
-        <h2>At Martoo EduTech Zone, we provide innovative educational resources and technology solutions to enhance your learning experience.</h2>
-        <p>Explore our VPN Configuration Generator to create custom VPN configurations tailored to your needs.</p>
+    <!-- Main content section -->
+    <section id="content-section">
+        <h2>Your gateway to education and technology</h2>
+        <p>Martoo EduTech Zone provides educational resources and technology solutions for an enhanced learning experience.</p>
     </section>
 
-    <section id="vpn-generator">
-        <h3>VPN Configuration Generator</h3>
-        <label for="username">Username:</label>
-        <input type="text" id="username" placeholder="Enter username" required>
-
-        <label for="sni">SNI/Bug Host:</label>
-        <input type="text" id="sni" placeholder="bug.hostname.com" required>
-
-        <label for="protocol">Protocol:</label>
-        <select id="protocol" required>
-            <option value="VMess">VMess</option>
-            <option value="Trojan">Trojan</option>
-            <option value="UDP">UDP</option>
-        </select>
-
-        <button onclick="generateConfig()">Generate Config</button>
-
-        <label for="output-field">Generated Output:</label>
-        <div id="output-field" readonly></div>
-    </section>
-
+    <!-- Footer section -->
     <footer>
-        <p>&copy; 2024 Martoo EduTech Zone - All rights reserved.</p>
+        <p>Connect with us:</p>
+        <div class="social-icons">
+            <a href="https://youtube.com/@martootech?si=WtTmTBtO6VjvajdN" target="_blank">YouTube</a>
+            <a href="https://www.facebook.com/profile.php?id=61561559594029" target="_blank">Facebook</a>
+            <a href="https://wa.me/260950322498" target="_blank">WhatsApp</a>
+        </div>
     </footer>
 
     <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
             menu.classList.toggle("show");
-        }
-
-        function generateConfig() {
-            var username = document.getElementById("username").value;
-            var sni = document.getElementById("sni").value;
-            var protocol = document.getElementById("protocol").value;
-            
-            var config = `Username: ${username}\nSNI/Bug Host: ${sni}\nProtocol: ${protocol}`;
-            document.getElementById("output-field").textContent = config;
         }
     </script>
 </body>
