@@ -6,21 +6,10 @@
     <title>Martoo EduTech Zone</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Full-screen video background styling */
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
         /* General body background and layout settings */
         body {
-            background-color: #333333;
-            color: #f0f0f0;
+            background-color: #333333; /* Dark earthy color */
+            color: #f0f0f0; /* Default text color */
             margin: 0;
             font-family: Arial, sans-serif;
         }
@@ -73,25 +62,9 @@
             background-color: rgba(255, 204, 0, 0.5);
         }
 
+        /* Show the menu when toggled */
         #menu.show {
             display: block;
-        }
-
-        /* Section for key content */
-        #content-section {
-            color: #f0f0f0;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        #content-section h2,
-        #content-section p {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 20px auto;
-            max-width: 800px;
         }
 
         /* Footer styles */
@@ -107,30 +80,22 @@
         }
 
         /* Social icon styling */
+        .social-icons {
+            margin-top: 10px;
+        }
+
         .social-icons a {
             margin: 0 10px;
-            display: inline-block;
+            text-decoration: none;
         }
 
         .social-icons img {
-            width: 24px;
-            height: 24px;
+            width: 30px;
+            height: 30px;
         }
     </style>
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("show");
-        }
-    </script>
 </head>
 <body>
-    <!-- Background video -->
-    <video class="background-video" autoplay loop muted playsinline>
-        <source src="Picsart_24-10-29_00-06-53-890.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
     <header>
         <h1>Welcome to Martoo EduTech Zone</h1>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
@@ -151,10 +116,24 @@
 
     <footer>
         <div class="social-icons">
-            <a href="https://youtube.com/@martootechhub?si=1E0BDIiWpOR1ziX_" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
-            <a href="https://www.facebook.com/profile.php?id=61567209490054" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="https://wa.me/260950322498" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+            <a href="https://youtube.com/@martootechhub?si=1E0BDIiWpOR1ziX_" target="_blank">
+                <img src="youtube-icon.png" alt="YouTube">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61567209490054" target="_blank">
+                <img src="facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://wa.me/260950322498" target="_blank">
+                <img src="whatsapp-icon.png" alt="WhatsApp">
+            </a>
         </div>
+        <p>&copy; 2024 Martoo EduTech Zone - All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
